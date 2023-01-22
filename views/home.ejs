@@ -1,0 +1,18 @@
+<%-include("./partials/header")-%>
+    <main class="mx-32 flex flex-col space-y-12 pb-24">
+      <div class="flex flex-col">
+        <h1 class="font-semibold text-4xl my-4">Home</h1>
+        <p class=""><%= homeStartingContent %></p>
+      </div>
+
+      <% posts.forEach( i => { %>
+        <div class="flex flex-col">
+          <h1 class="font-semibold text-4xl my-4"><%= i.title %></h1>
+          <div class="flex space-x-2">
+            <p class="truncate w-[60%]"><%= i.body %></p>
+            <a class="anchor text-blue-500 underline hover:text-indigo-900" href=<%= i._id %>>Read More</a>
+          </div>
+        </div>
+      <% }); %>
+    </main>
+    <%-include("./partials/footer")-%>
